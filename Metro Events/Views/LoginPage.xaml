@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Metro_Events.Views.LoginPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="20" Margin="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image x:Name="logoName"
+                   Aspect="AspectFill"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10, 0, 10, 0"
+                   />
+                <Label Text="Log in on Metro Events 🤗" HorizontalOptions="CenterAndExpand" Padding="10"/>
+                <Image x:Name="logoIcon"
+                       Aspect="AspectFill"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="10"/>
+                <Entry x:Name="login_email" Placeholder="Enter email" Keyboard="Email"/>
+                <Entry x:Name="login_password" Placeholder="Enter password" IsPassword="True"/>
+                <Button x:Name="login_button" CornerRadius="50" Text="LOG IN" Clicked="Login_button_Clicked" BackgroundColor="#d11141" TextColor="White" Padding="20"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

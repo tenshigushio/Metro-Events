@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\images\icons\bookmark.png" />
+    <None Remove="Assets\images\icons\home.png" />
+    <None Remove="Assets\images\icons\invoice.png" />
+    <None Remove="Assets\images\icons\notification.png" />
+    <None Remove="Assets\images\icons\user.png" />
+    <None Remove="Assets\images\logo\metroevents_icon.png" />
+    <None Remove="Assets\images\logo\metroevents_icon_ns.png" />
+    <None Remove="Assets\images\logo\metroevents_metro.png" />
+    <None Remove="Assets\images\logo\metroevents_white.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\images\icons\bookmark.png" />
+    <EmbeddedResource Include="Assets\images\icons\home.png" />
+    <EmbeddedResource Include="Assets\images\icons\invoice.png" />
+    <EmbeddedResource Include="Assets\images\icons\notification.png" />
+    <EmbeddedResource Include="Assets\images\icons\user.png" />
+    <EmbeddedResource Include="Assets\images\logo\metroevents_icon.png" />
+    <EmbeddedResource Include="Assets\images\logo\metroevents_icon_ns.png" />
+    <EmbeddedResource Include="Assets\images\logo\metroevents_metro.png" />
+    <EmbeddedResource Include="Assets\images\logo\metroevents_white.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LandingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RegisterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\WelcomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="View Models\" />
+  </ItemGroup>
+</Project>

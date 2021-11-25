@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Metro_Events.Views.HomePage"
+            xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:views="clr-namespace:Metro_Events.Views"
+            x:DataType="views:HomePage"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="GhostWhite"
+            BarTextColor="#383838"
+            >
+
+  <!--Pages can be added as references or inline-->
+    <TabbedPage.Children>
+        <!-- *** HOME ***-->
+        <ContentPage x:Name="Home"  NavigationPage.HasNavigationBar="False">
+            <Grid Margin="10" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Image x:Name="profilePic"
+                       Aspect="AspectFill"
+                       VerticalOptions="Start"
+                       HorizontalOptions="End"
+                       WidthRequest="40"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       
+                 />
+                <Label Text ="Discover"
+                       TextColor="#383838"
+                       FontSize="35"
+                       FontAttributes="Bold"
+                       Grid.Column="0"
+                       Grid.Row="1"
+                       VerticalOptions="StartAndExpand"
+                 />
+                <Label Text="amazing events."
+                       TextColor="#d11141"
+                       FontSize="40"
+                       FontAttributes="Bold"
+                       Grid.Column="0"
+                       Grid.Row="2"
+                       Grid.ColumnSpan="2"
+                       HorizontalOptions="CenterAndExpand"
+                />
+                <SearchBar TextChanged="SearchBar_textChanged"
+                           x:Name="searchEvent"
+                           Placeholder="Search Event"
+                           PlaceholderColor="#383838"
+                           Grid.Column="0"
+                           Grid.Row="4"
+                           Grid.ColumnSpan="2"
+                           />
+                <Label Text ="Explore"
+                       TextColor="#383838"
+                       FontSize="25"
+                       FontAttributes="Bold"
+                       Grid.Column="0"
+                       Grid.Row="5"
+                       VerticalOptions="StartAndExpand"/>
+                <CollectionView x:Name="Eventlist" ItemsSource="{Binding Events}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Grid.RowSpan="3">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10"
+                                    RowDefinitions="Auto, *"
+                                    ColumnDefinitions="Auto, *">
+                                <Image Grid.Column="0"
+                                       Grid.RowSpan="3"
+                                       Source="{Binding ImageUrl}"
+                                       Aspect="AspectFill"
+                                       HeightRequest="60"
+                                       WidthRequest="100" />
+                                <Label Grid.Column="1"
+                                       Text="{Binding EventName}"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       Text="{Binding Category}"
+                                       VerticalOptions="End" />
+                                <Label Grid.Row="2"
+                                       Grid.Column="1"
+                                       Text="{Binding Event_date}"
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ContentPage>
+        
+        <ContentPage x:Name="Favorites">
+            <StackLayout Padding="10" Margin="10">
+                <Label Text="Favorites"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                />
+            </StackLayout>
+        </ContentPage>
+
+        <TabbedPage x:Name="Tickets">
+            <TabbedPage.Children>
+                <ContentPage Title="Upcoming">
+
+                </ContentPage>
+                <ContentPage Title="Past Tickets">
+
+                </ContentPage>
+            </TabbedPage.Children>
+        </TabbedPage>
+        
+        <ContentPage x:Name="Notification">
+            <StackLayout Padding="10" Margin="10">
+                <Label Text="Notification Centre"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                />
+            </StackLayout>
+        </ContentPage>
+        <ContentPage x:Name="Profile">
+            <StackLayout Padding="25" VerticalOptions="Center">
+                <Label x:Name="Username" FontSize="Large" FontAttributes="Bold" TextColor="#d11141" HorizontalOptions="Center"/>
+                <Label x:Name="UserEmail" FontSize="Large" FontAttributes="Bold" TextColor="#d11141" HorizontalOptions="Center"/>
+                    <Button x:Name="LogOut"
+                        Text="LOG OUT"
+                        CornerRadius="50"
+                        BorderColor="#d11141"
+                        BackgroundColor="White"
+                        BorderWidth="3"
+                        TextColor="#d11141"
+                        Clicked="LogOut_Clicked"/>
+                <BoxView/>
+                
+                <Label Text="Disclaimer" HorizontalOptions="Center" FontAttributes="Bold"/>
+                <Label Text="Icons made by Aswell Studio and Kiranshastry from Flaticon" HorizontalOptions="Center"/>
+                <Label Text="Some events are from Eventbrite" HorizontalOptions="Center" />
+            </StackLayout>
+        </ContentPage>
+    </TabbedPage.Children>
+</TabbedPage>

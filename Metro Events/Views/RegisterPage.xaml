@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Metro_Events.Views.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="10" Margin="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image x:Name="logoName"
+                   Aspect="AspectFill"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10, 0, 10, 0"/>
+                <Label Text="Sign up on Metro Events 🤗" Padding="10" HorizontalOptions="CenterAndExpand"/>
+                <Image x:Name="logoIcon"
+                       Aspect="AspectFill"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="10"
+                       />
+                <Entry x:Name="register_firstname" Placeholder="First name"/>
+                <Entry x:Name="register_lastname" Placeholder="Last name"/>
+                <Entry x:Name="register_username" Placeholder="Enter new username"/>
+                <Entry x:Name="register_email" Placeholder="Enter email" Keyboard="Email"/>
+                <Entry x:Name="register_password" Placeholder="Enter new password" IsPassword="True"/>
+                <Button x:Name="register_button" CornerRadius="50" Text="SIGN UP" Clicked="Register_button_Clicked" Padding="10" BackgroundColor="#d11141" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
